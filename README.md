@@ -1,2 +1,2 @@
-# Taller 2 -- CLLouud Computing
+# Taller 2 - Cloud Computing
 
