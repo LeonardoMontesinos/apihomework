@@ -2,7 +2,7 @@ const express = require("express");
 const db = require("./db"); // Importamos la conexión a la base de datos
 
 const app = express();
-const PORT = 8000;
+const PORT = 3000;
 
 app.use(express.json());
 
