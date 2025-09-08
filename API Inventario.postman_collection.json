@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "3f968e5f-59d4-4a56-a50a-bbc84c655455",
+		"name": "API Inventario",
+		"description": "Colección de endpoints para la API de inventario con tabla 'productos'.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37778402"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/productos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear producto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Laptop Dell\",\n  \"categoria\": \"Electrónica\",\n  \"stock\": 15,\n  \"precio\": 3500\n}"
+				},
+				"url": {
+					"raw": "{{url}}/productos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar stock (venta o reposición)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"accion\": \"v\",\n  \"cantidad\": 3\n}"
+				},
+				"url": {
+					"raw": "{{url}}/productos/1/cantidad",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"productos",
+						"1",
+						"cantidad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar información (nombre, categoría, precio)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Laptop Lenovo\",\n  \"categoria\": \"Electrónica\",\n  \"precio\": 2800\n}"
+				},
+				"url": {
+					"raw": "{{url}}/productos/1/info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"productos",
+						"1",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/productos/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://<TU_IP_AWS>:3000"
+		}
+	]
+}
